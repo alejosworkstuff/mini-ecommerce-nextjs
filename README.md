@@ -229,7 +229,7 @@ Details: [`docs/testing-strategy.md`](docs/testing-strategy.md)
 
 ## Deployment
 
-- **Vercel:** primary live URL (configure Clerk + optional Sentry env vars in the dashboard). Every pull request gets an automatic **preview deployment** via the Vercel ↔ GitHub integration; pushes to `main` deploy to production.
+- **Vercel:** primary live URL (configure Clerk + optional Sentry env vars in the dashboard). Every pull request gets an automatic **preview deployment** via the Vercel ↔ GitHub integration; pushes to `main` deploy to production. The build runs `prisma migrate deploy` on production/CI/local builds but **skips migrations on Preview builds** (`VERCEL_ENV=preview`) — see `scripts/build.mjs`.
 - **AWS ECS:** `.github/workflows/deploy-aws.yml`, `aws/task-definition.json`, `aws/deploy.md`.
 
 ---

@@ -1,6 +1,36 @@
 const flowConfig = {
-  "id": "07461261-9731-452e-9923-3cdf986af20c",
+  "id": "dcc88de0-138c-4a0c-9afa-f923debfe6c0",
   "name": "1 - Getting Started",
+  "edges": [
+    {
+      "id": "triggerNode_1-LLMNode_567",
+      "type": "defaultEdge",
+      "source": "triggerNode_1",
+      "target": "LLMNode_567",
+      "sourceHandle": "bottom",
+      "targetHandle": "top"
+    },
+    {
+      "id": "LLMNode_567-responseNode_triggerNode_1",
+      "type": "defaultEdge",
+      "source": "LLMNode_567",
+      "target": "responseNode_triggerNode_1",
+      "sourceHandle": "bottom",
+      "targetHandle": "top"
+    },
+    {
+      "id": "response-responseNode_triggerNode_1",
+      "type": "responseEdge",
+      "source": "triggerNode_1",
+      "target": "responseNode_triggerNode_1",
+      "sourceHandle": "to-response",
+      "targetHandle": "from-trigger"
+    }
+  ],
+  "status": "active",
+  "created_at": "2026-07-14T14:08:42.808151+00:00",
+  "slug": "BrokenHoney-3026",
+  "trigger_id": null,
   "nodes": [
     {
       "id": "sticky-gm21yx26f",
@@ -256,35 +286,7 @@ const flowConfig = {
       },
       "selected": false
     }
-  ],
-  "edges": [
-    {
-      "id": "triggerNode_1-LLMNode_567",
-      "type": "defaultEdge",
-      "source": "triggerNode_1",
-      "target": "LLMNode_567",
-      "sourceHandle": "bottom",
-      "targetHandle": "top"
-    },
-    {
-      "id": "LLMNode_567-responseNode_triggerNode_1",
-      "type": "defaultEdge",
-      "source": "LLMNode_567",
-      "target": "responseNode_triggerNode_1",
-      "sourceHandle": "bottom",
-      "targetHandle": "top"
-    },
-    {
-      "id": "response-responseNode_triggerNode_1",
-      "type": "responseEdge",
-      "source": "triggerNode_1",
-      "target": "responseNode_triggerNode_1",
-      "sourceHandle": "to-response",
-      "targetHandle": "from-trigger"
-    }
-  ],
-  "status": "active",
-  "created_at": "2026-07-14T14:06:52.131736+00:00"
+  ]
 };
 
 export async function getNodesAndEdges(): Promise<{
